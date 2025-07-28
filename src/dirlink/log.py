@@ -4,7 +4,6 @@ log_types = {
     "info": colored("[ INFO ]", "green"),
     "warn": colored("[ WARNING ]", "yellow"),
     "err": colored("[ ERROR ]", "red"),
-    "succ": colored("[ SUCCESS ]", "light_green")
 }
 
 colored()

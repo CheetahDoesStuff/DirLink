@@ -59,3 +59,20 @@ class LinkManager():
         if link in data:
             return True  
         return False
+
+
+    # Returns Boolean, true: exit the process (error occured), false: keep going
+    def load_link(self, link: str) -> bool:
+        data_path = PathData.data_file()
+
+        if not self.verify_link(link):
+            log("err", "Could Not Load Link: Link Doesnt Exist. Error Code: 1")
+            return True
+
+        with open(data_path, "r"):
+            data = json.load(f)
+        
+        command = f"cd {data[link]}"
+        pyperclip_copy(command)
+
+        log("info", "Successfully Copied Command To Clipboard")
