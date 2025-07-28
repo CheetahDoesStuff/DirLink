@@ -4,4 +4,4 @@
 # Yeah python files we dont need ( neccesary ones will be installed by uv )
 .venv
 *.egg-info/
-*__pychace__/
+src/dirlink/__pycache__/
