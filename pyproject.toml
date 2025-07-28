@@ -1,6 +1,6 @@
 [project]
 name = "dirlink"
-version = "0.1.0"
+version = "0.1.1a1"
 description = "An Easy To Use Terminal Tool To Speed Up Your Directory Navigation"
 readme = "README.md"
 requires-python = ">=3.12"
