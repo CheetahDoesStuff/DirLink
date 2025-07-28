@@ -11,6 +11,7 @@ class LinkManager():
         data_path = PathData.data_file()
 
         if self.verify_link(link):
+            log("err", "Could Not Create Link: Link Already Exists. Error Code: 2")
             return True
 
         with open(data_path, "a") as f:
@@ -26,6 +27,7 @@ class LinkManager():
         data_path = PathData.data_file()
 
         if not self.verify_link(link):
+            log("err", "Could Not Remove Link: Link Doesnt Exist. Error Code: 1")
             return True
 
         with open(data_path, "w+") as f:

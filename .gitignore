@@ -1,3 +1,7 @@
+# We do not have to upload the files produced when building the library
 /dist
+
+# Yeah python files we dont need ( neccesary ones will be installed by uv )
 .venv
 *.egg-info/
+*__pychace__/
