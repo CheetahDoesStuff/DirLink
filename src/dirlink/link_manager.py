@@ -7,12 +7,11 @@ class LinkManager():
 
     # Returns Boolean, true: exit the process (error occured), false: keep going
     def add_link(self, link: str) -> bool:
-        data_path = PathData.data_path()
+        data_path = PathData.data_file()
 
-        with open(data_path / "links.dlink", "a+") as f:
+        with open(data_path, "a+") as f:
 
-            data = f.read()
-            data = data.split("\n")
+            data = f.readlines()
 
             if link in data:
                 log("err", "Link Already Exists. Error code: 1")
@@ -24,4 +23,14 @@ class LinkManager():
         
         log("info", "Successfully Saved Link")
         return False
-            
+    
+    # Returns Boolean, true: exit the process (error occured), false: keep going
+    def rm_link(self, link: str) -> bool:
+        data_path = PathData.data_file()
+
+        with open(data_path, "w+") as f:
+            data = f.readlines()
+
+            for link in data:
+                if link.strip("\n") != link:
+                    f.write(link)

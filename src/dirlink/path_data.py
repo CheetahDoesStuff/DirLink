@@ -4,5 +4,8 @@ class PathData():
     def __init__(self):
         pass
 
-    def data_path(self):
+    def _data_path(self):
         return user_data_dir("DirLink", "Cheetahs Programs")
+    
+    def data_file(self):
+        return _data_path() / "links.dl-dat"
