@@ -6,8 +6,6 @@ log_types = {
     "err": colored("[ ERROR ]", "red"),
 }
 
-colored()
-
 def log(type, message):
     # Example: [ DIRLINK ] [ INFO ] Sucessfully Saved Link
     print(f"{colored(" [ DIRLINK ] ", "blue")}{log_types[type]} {message}")

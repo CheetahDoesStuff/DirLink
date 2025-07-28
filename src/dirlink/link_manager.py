@@ -1,5 +1,5 @@
-from src.dirlink.path_data import PathData
-from src.dirlink.log import log
+from dirlink.path_data import PathData
+from dirlink.log import log
 
 from pathlib import Path
 import json
