@@ -4,5 +4,4 @@ version = "0.1.0"
 description = "An Easy To Use Terminal Tool To Speed Up Your Directory Navigation"
 readme = "README.md"
 requires-python = ">=3.12"
-author = [{name = "BravestCheetah", email = "contact.cheetah@tutamail.com"}]
-dependencies = []
+dependencies = ["termcolor", "platformdirs"]
