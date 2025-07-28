@@ -1,22 +1,33 @@
 from src.dirlink.path_data import PathData
 from src.dirlink.log import log
 
+from pathlib import Path
+import json
+
+# Avoid importing all of the library for performance but not confuse as copy is such a common keyword
+from pyperclip import copy as pyperclip_copy
+
 class LinkManager():
     def __init__(self):
         pass
 
 
     # Returns Boolean, true: exit the process (error occured), false: keep going
-    def add_link(self, link: str) -> bool:
+    def add_link(self, link: str, link_path: Path) -> bool:
         data_path = PathData.data_file()
 
         if self.verify_link(link):
             log("err", "Could Not Create Link: Link Already Exists. Error Code: 2")
             return True
 
-        with open(data_path, "a") as f:
-            f.write(link)
-            f.close()
+        with open(data_path, "w+") as f:
+            data = json.load(f)
+            if data == None:
+                data = {}
+            
+            data[link] = link_path
+
+            json.dump(data, f)
         
         log("info", "Successfully Saved Link")
         return False
