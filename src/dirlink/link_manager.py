@@ -42,13 +42,9 @@ class LinkManager():
             return True
 
         with open(data_path, "w+") as f:
-            data = f.readlines()
-
-            for link in data:
-                if link.strip("\n") != link:
-                    f.write(link)
-            
-            f.close()
+            data = json.load(f)
+            data.pop(link)
+            json.dump(data, f)
         
         return False
     
@@ -58,10 +54,8 @@ class LinkManager():
         data_path = PathData.data_file()
 
         with open(data_path, "r") as f:
-            data = f.readlines()
-
-            for loop_link in data:
-                if loop_link.strip("\n") == link:
-                    return True
-            
-            return False
+            data = json.load(f)
+        
+        if link in data:
+            return True  
+        return False
