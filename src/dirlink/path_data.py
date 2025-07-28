@@ -5,4 +5,4 @@ class PathData():
         pass
 
     def data_path(self):
-        return user_data_dir
+        return user_data_dir("DirLink", "Cheetahs Programs")

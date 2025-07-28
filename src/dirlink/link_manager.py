@@ -1,3 +1,5 @@
+from src.dirlink.path_data import PathData
+
 class LinkManager():
     def __init__(self):
         pass
