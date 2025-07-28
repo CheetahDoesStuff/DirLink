@@ -10,7 +10,7 @@ class LinkManager():
     def add_link(self, link: str) -> bool:
         data_path = PathData.data_file()
 
-        if verify_link(link):
+        if self.verify_link(link):
             return True
 
         with open(data_path, "a") as f:
@@ -25,12 +25,19 @@ class LinkManager():
     def rm_link(self, link: str) -> bool:
         data_path = PathData.data_file()
 
+        if not self.verify_link(link):
+            return True
+
         with open(data_path, "w+") as f:
             data = f.readlines()
 
             for link in data:
                 if link.strip("\n") != link:
                     f.write(link)
+            
+            f.close()
+        
+        return False
     
 
     # Returns Boolean, true: link exists, false: link doesnt exist
