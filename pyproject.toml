@@ -8,3 +8,8 @@ dependencies = ["termcolor", "platformdirs"]
 
 [project.scripts]
 dirlink = "dirlink.cli:main"
+
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
