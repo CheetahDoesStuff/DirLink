@@ -95,7 +95,7 @@ class LinkManager():
             log("err", "Could Not Load Link: Link Doesnt Exist. Error Code: 1")
             return True
 
-        with open(data_path, "r"):
+        with open(data_path, "r") as f:
             data = json.load(f)
         
         command = f"cd {data[link]}"

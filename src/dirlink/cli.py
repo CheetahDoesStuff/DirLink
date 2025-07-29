@@ -36,7 +36,7 @@ def main():
     if args.command == "new":
         manager.add_link(args.name, Path(args.path))
     elif args.command == "remove":
-        manager.remove_link(args.name)
+        manager.rm_link(args.name)
     elif args.command == "load":
         manager.load_link(args.name)
 

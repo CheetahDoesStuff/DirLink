@@ -5,7 +5,7 @@ requires-python = ">=3.12"
 [[package]]
 name = "dirlink"
 version = "1.0.0a1"
-source = { virtual = "." }
+source = { editable = "." }
 dependencies = [
     { name = "platformdirs" },
     { name = "termcolor" },
