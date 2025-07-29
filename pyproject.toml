@@ -1,10 +1,10 @@
 [project]
 name = "dirlink"
-version = "1.0.0a1"
+version = "1.0.1"
 description = "An Easy To Use Terminal Tool To Speed Up Your Directory Navigation"
 readme = "README.md"
 requires-python = ">=3.12"
-dependencies = ["termcolor", "platformdirs"]
+dependencies = ["termcolor", "platformdirs", "pyperclip"]
 
 [project.scripts]
 dirlink = "dirlink.cli:main"

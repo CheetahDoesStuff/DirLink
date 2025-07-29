@@ -4,16 +4,18 @@ requires-python = ">=3.12"
 
 [[package]]
 name = "dirlink"
-version = "1.0.0a1"
+version = "1.0.1"
 source = { editable = "." }
 dependencies = [
     { name = "platformdirs" },
+    { name = "pyperclip" },
     { name = "termcolor" },
 ]
 
 [package.metadata]
 requires-dist = [
     { name = "platformdirs" },
+    { name = "pyperclip" },
     { name = "termcolor" },
 ]
 
@@ -25,6 +27,12 @@ sdist = { url = "https://files.pythonhosted.org/packages/fe/8b/3c73abc9c759ecd3f
 wheels = [
     { url = "https://files.pythonhosted.org/packages/fe/39/979e8e21520d4e47a0bbe349e2713c0aac6f3d853d0e5b34d76206c439aa/platformdirs-4.3.8-py3-none-any.whl", hash = "sha256:ff7059bb7eb1179e2685604f4aaf157cfd9535242bd23742eadc3c13542139b4", size = 18567, upload-time = "2025-05-07T22:47:40.376Z" },
 ]
+
+[[package]]
+name = "pyperclip"
+version = "1.9.0"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/30/23/2f0a3efc4d6a32f3b63cdff36cd398d9701d26cda58e3ab97ac79fb5e60d/pyperclip-1.9.0.tar.gz", hash = "sha256:b7de0142ddc81bfc5c7507eea19da920b92252b548b96186caf94a5e2527d310", size = 20961, upload-time = "2024-06-18T20:38:48.401Z" }
 
 [[package]]
 name = "termcolor"
