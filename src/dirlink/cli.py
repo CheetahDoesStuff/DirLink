@@ -29,3 +29,16 @@ def main():
     # Load Link Command
     remove = subparsers.add_parser("load", help="Loads Your Link Command To Your Clipboard")
     remove.add_argument("name", help="Name Of The Link To Load")
+
+    args = parser.parse_args()
+    manager = LinkManager()
+   
+    if args.command == "new":
+        manager.add_link(args.name, Path(args.path))
+    elif args.command == "remove":
+        manager.remove_link(args.name)
+    elif args.command == "load":
+        manager.load_link(args.name)
+
+if __name__ == "__main__":
+    main()
