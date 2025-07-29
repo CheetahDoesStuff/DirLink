@@ -20,13 +20,20 @@ class LinkManager():
             log("err", "Could Not Create Link: Link Already Exists. Error Code: 2")
             return True
 
-        with open(data_path, "w+") as f:
-            data = json.load(f)
-            if data == None:
+        with open(data_path, "r") as f:
+            content = f.read().strip()
+            if not content:
                 data = {}
             
-            data[link] = link_path
+            else:
+                data = json.load(f)
 
+        if data == None:
+            data = {}
+            
+        data[link] = str(link_path)
+
+        with open(data_path, "w") as f:
             json.dump(data, f)
         
         log("info", "Successfully Saved Link")
@@ -41,9 +48,17 @@ class LinkManager():
             log("err", "Could Not Remove Link: Link Doesnt Exist. Error Code: 1")
             return True
 
-        with open(data_path, "w+") as f:
-            data = json.load(f)
-            data.pop(link)
+        with open(data_path, "r") as f:
+            content = f.read().strip()
+            if not content:
+                data = {}
+            
+            else:
+                data = json.load(f)
+
+        data.pop(link)
+
+        with open(data_path, "w") as f:
             json.dump(data, f)
         
         return False
@@ -52,9 +67,17 @@ class LinkManager():
     # Returns Boolean, true: link exists, false: link doesnt exist
     def verify_link(self, link: str) -> bool:
         data_path = PathData.data_file()
+        if not Path.exists(data_path):
+            data_path.parent.mkdir(parents=True, exist_ok=True)
+            open(data_path, "w").close()
 
         with open(data_path, "r") as f:
-            data = json.load(f)
+            content = f.read().strip()
+            if not content:
+                data = {}
+            
+            else:
+                data = json.load(f)
         
         if link in data:
             return True  
