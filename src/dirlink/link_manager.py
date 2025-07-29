@@ -22,11 +22,12 @@ class LinkManager():
 
         with open(data_path, "r") as f:
             content = f.read().strip()
-            if not content:
-                data = {}
+
+        if not content:
+            data = {}
             
-            else:
-                data = json.load(f)
+        else:
+            data = json.loads(content)
 
         if data == None:
             data = {}
@@ -50,11 +51,12 @@ class LinkManager():
 
         with open(data_path, "r") as f:
             content = f.read().strip()
-            if not content:
-                data = {}
+
+        if not content:
+            data = {}
             
-            else:
-                data = json.load(f)
+        else:
+            data = json.loads(content)
 
         data.pop(link)
 
@@ -73,11 +75,12 @@ class LinkManager():
 
         with open(data_path, "r") as f:
             content = f.read().strip()
-            if not content:
-                data = {}
+
+        if not content:
+            data = {}
             
-            else:
-                data = json.load(f)
+        else:
+            data = json.loads(content)
         
         if link in data:
             return True  
