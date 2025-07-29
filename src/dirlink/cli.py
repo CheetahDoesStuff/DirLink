@@ -2,6 +2,8 @@ import argparse
 from pathlib import Path
 
 from .link_manager import LinkManager
+from .log import log
+from .path_data import PathData
 
 def main():
     parser = argparse.ArgumentParser(
@@ -22,13 +24,15 @@ def main():
 
     # Remove Link Command
     remove = subparsers.add_parser("remove", help="Remove An Existing Directory Link")
-
     remove.add_argument("name", help="The Name Of The Link To Remove")
 
 
     # Load Link Command
-    remove = subparsers.add_parser("load", help="Loads Your Link Command To Your Clipboard")
-    remove.add_argument("name", help="Name Of The Link To Load")
+    load = subparsers.add_parser("load", help="Loads Your Link Command To Your Clipboard")
+    load.add_argument("name", help="Name Of The Link To Load")
+
+    # Data Path Command
+    data = subparsers.add_parser("getdata", help="Prints The Path To The File DirLink Saves Data To")
 
     args = parser.parse_args()
     manager = LinkManager()
@@ -39,6 +43,8 @@ def main():
         manager.rm_link(args.name)
     elif args.command == "load":
         manager.load_link(args.name)
+    elif args.command == "getdata":
+        log("info", f"Link Data File Path: {PathData.data_file()}")
 
 if __name__ == "__main__":
     main()

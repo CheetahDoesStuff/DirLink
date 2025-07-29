@@ -14,6 +14,7 @@ class LinkManager():
 
     # Returns Boolean, true: exit the process (error occured), false: keep going
     def add_link(self, link: str, link_path: Path) -> bool:
+        log("info", "Trying To Create Link...")
         data_path = PathData.data_file()
 
         if self.verify_link(link):
@@ -43,6 +44,7 @@ class LinkManager():
 
     # Returns Boolean, true: exit the process (error occured), false: keep going
     def rm_link(self, link: str) -> bool:
+        log("info", "Trying To Remove Link...")
         data_path = PathData.data_file()
 
         if not self.verify_link(link):
@@ -62,6 +64,8 @@ class LinkManager():
 
         with open(data_path, "w") as f:
             json.dump(data, f)
+        
+        log("info", "Successfully Removed Link")
         
         return False
     
@@ -89,6 +93,7 @@ class LinkManager():
 
     # Returns Boolean, true: exit the process (error occured), false: keep going
     def load_link(self, link: str) -> bool:
+        log("info", "Trying To Load Link...")
         data_path = PathData.data_file()
 
         if not self.verify_link(link):
