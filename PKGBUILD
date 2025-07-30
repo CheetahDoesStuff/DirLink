@@ -4,10 +4,10 @@ pkgver=1.0.1
 pkgrel=3
 pkgdesc="A Tiny CLI Tool For Faster Command Line File System Navigation"
 arch=('any')
-url="https://github.com/BravestCheetah/DirLink"   # Your project homepage or repo URL
+url="https://github.com/BravestCheetah/DirLink"
 license=('MIT')
 depends=('python' 'python-pyperclip')
-makedepends=('python' 'python-pip')  # Optional, if building needs them
+makedepends=('python' 'python-pip')
 source=("https://github.com/BravestCheetah/DirLink/archive/refs/tags/v${pkgver}.tar.gz")
 sha256sums=('SKIP') # I dont wanna go through the hassle of doing this every new release
 
