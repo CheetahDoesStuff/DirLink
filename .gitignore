@@ -1,5 +1,6 @@
-# We do not have to upload the files produced when building the library
+# We do not have to upload the files produced when building the tool
 /dist
+/dirlink-1.*
 
 # Yeah python files we dont need ( neccesary ones will be installed by uv )
 .venv
