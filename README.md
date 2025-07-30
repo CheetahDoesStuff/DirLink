@@ -1,6 +1,6 @@
 # DirLink
 
-*Note - This Readme Is Not Complete And I Will Add Content As I Add Code*
+*Note - This README is incomplete and docs will be added very soon*
 
 # Errors
 
