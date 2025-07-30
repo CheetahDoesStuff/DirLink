@@ -8,13 +8,15 @@ url="https://github.com/BravestCheetah/DirLink"
 license=('MIT')
 depends=('python' 'python-pyperclip')
 makedepends=('python' 'python-pip')
-source=("https://github.com/BravestCheetah/DirLink/archive/refs/tags/v${pkgver}.tar.gz")
-sha256sums=('SKIP') # I dont wanna go through the hassle of doing this every new release
+source=("https://github.com/BravestCheetah/DirLink/releases/download/${pkgver}/${pkgver}.tar.gz")
+sha256sums=('SKIP')
+
 
 prepare() {
   cd "$srcdir"
-  tar xf "v${pkgver}.tar.gz"
+  tar xf "${pkgver}.tar.gz"
 }
+
 
 package() {
   install -dm755 "$pkgdir/usr/lib/python3.13/site-packages/dirlink"
