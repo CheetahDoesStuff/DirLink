@@ -1,0 +1,22 @@
+Metadata-Version: 2.4
+Name: dirlink
+Version: 1.0.1
+Summary: An Easy To Use Terminal Tool To Speed Up Your Directory Navigation
+Requires-Python: >=3.12
+Description-Content-Type: text/markdown
+Requires-Dist: termcolor
+Requires-Dist: platformdirs
+Requires-Dist: pyperclip
+
+# DirLink
+
+*Note - This Readme Is Not Complete And I Will Add Content As I Add Code*
+
+# Errors
+
+heres a table of all error codes:
+
+| Code | Description |
+|------|-------------|
+| 1 | Error: Link Does Not Exist / Was Not Found In Saved Data |
+| 2 | Error : Link Already Exists / Was Found In Saved Data |

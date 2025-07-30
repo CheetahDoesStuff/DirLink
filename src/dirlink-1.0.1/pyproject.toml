@@ -1,0 +1,19 @@
+[project]
+name = "dirlink"
+version = "1.0.1"
+description = "An Easy To Use Terminal Tool To Speed Up Your Directory Navigation"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = ["termcolor", "platformdirs", "pyperclip"]
+
+[project.scripts]
+dirlink = "dirlink.cli:main"
+DLink = "dirlink.cli:main"
+dl = "dirlink.cli:main"
+
+[build-system]
+requires = ["setuptools>=80.0.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]
