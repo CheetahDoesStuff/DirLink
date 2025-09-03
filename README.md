@@ -1,6 +1,8 @@
 # DirLink
 
-*Note - This README is incomplete and docs will be added very soon*
+## Installation
+
+You can install DirLink manually (which i will not provide a guide for, but the files are in the latest release) or through the AUR, where its called dirlink and can be installed manually or with an AUR Helper like `yay`
 
 # Errors
 
